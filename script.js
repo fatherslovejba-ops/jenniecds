@@ -25,50 +25,94 @@ tabs.forEach(tab => {
   });
 });
 const langToggle = document.getElementById("lang-toggle");
-
 let isEnglish = false;
 
 langToggle.addEventListener("click", () => {
 
-  if(!isEnglish){
+if(!isEnglish){
 
-    document.querySelector('a[href="#services"]').textContent = "Services";
-    document.querySelector('a[href="#works"]').textContent = "Portfolio";
-    document.querySelector('a[href="#system"]').textContent = "System";
-    document.querySelector('a[href="#contact"]').textContent = "Contact";
+// 導覽列
+document.querySelector('a[href="#services"]').textContent = "Services";
+document.querySelector('a[href="#works"]').textContent = "Portfolio";
+document.querySelector('a[href="#system"]').textContent = "System";
+document.querySelector('a[href="#contact"]').textContent = "Contact";
 
-    document.querySelector(".hero h1").innerHTML =
-    'We Don’t Do Marketing,<br>We Turn Traffic Into<br><span>Cash Flow.</span>';
+// CTA
+document.querySelector(".header-cta").textContent =
+"Free Traffic Audit";
 
-    document.querySelector(".hero-text").textContent =
-    "Jenny Leadflow Marketing helps brands turn traffic into real customers.";
+// Hero
+document.querySelector(".hero h1").innerHTML =
+'We Don’t Do Marketing,<br>We Turn Traffic Into<br><span>Cash Flow.</span>';
 
-    document.querySelector(".header-cta").textContent =
-    "Free Traffic Audit";
+document.querySelector(".hero-text").textContent =
+"Jenny Leadflow Marketing helps restaurants, brands, trophy businesses and local stores build a real conversion system — from visual attraction, social content and ad campaigns to direct-message closing.";
 
-    langToggle.textContent = "中文";
+document.querySelector(".hero-actions .primary").textContent =
+"Book Consultation";
 
-    isEnglish = true;
+document.querySelector(".hero-actions .ghost").textContent =
+"View Portfolio";
 
-  }else{
+// About
+document.querySelector(".intro h2").innerHTML =
+'The Market Is Not Missing Exposure,<br>It Is Missing Conversion.';
 
-    document.querySelector('a[href="#services"]').textContent = "服務";
-    document.querySelector('a[href="#works"]').textContent = "作品";
-    document.querySelector('a[href="#system"]').textContent = "成交系統";
-    document.querySelector('a[href="#contact"]').textContent = "聯絡";
+document.querySelector(".intro p:last-child").textContent =
+"Many brands are not bad — they just look low value. We design not only visuals, but an entire conversion process.";
 
-    document.querySelector(".hero h1").innerHTML =
-    '不是做行銷，<br>是把流量變成<br><span>現金流。</span>';
+// Services title
+document.querySelector("#services h2").innerHTML =
+"We Provide More Than Services,<br>We Build Conversion Systems.";
 
-    document.querySelector(".hero-text").textContent =
-    "傑倪引流行銷協助品牌從流量到成交。";
+// Services
+const serviceTitles = document.querySelectorAll(".service-card h3");
+serviceTitles[0].textContent = "Traffic Strategy";
+serviceTitles[1].textContent = "Conversion Design";
+serviceTitles[2].textContent = "Short-form Content";
+serviceTitles[3].textContent = "Ad Management";
+serviceTitles[4].textContent = "DM Closing Scripts";
+serviceTitles[5].textContent = "Restaurant Growth";
 
-    document.querySelector(".header-cta").textContent =
-    "免費流量健檢";
+// Works
+document.querySelector("#works h2").textContent =
+"Portfolio";
 
-    langToggle.textContent = "EN";
+document.querySelector(".tab[data-filter='all']").textContent =
+"All";
+document.querySelector(".tab[data-filter='food']").textContent =
+"Food";
+document.querySelector(".tab[data-filter='brand']").textContent =
+"Brand";
+document.querySelector(".tab[data-filter='social']").textContent =
+"Social";
+document.querySelector(".tab[data-filter='package']").textContent =
+"Packaging";
+document.querySelector(".tab[data-filter='award']").textContent =
+"Trophy";
 
-    isEnglish = false;
-  }
+// System
+document.querySelector("#system h2").textContent =
+"Conversion System";
+
+// Contact
+document.querySelector("#contact h2").innerHTML =
+"Get a Free Traffic Audit,<br>Find Out What Stops Your Growth.";
+
+document.querySelector(".contact-actions .primary").textContent =
+"LINE Consultation";
+
+document.querySelector(".contact-actions .ghost").textContent =
+"Call Us";
+
+// 按鈕切換
+langToggle.textContent = "中文";
+isEnglish = true;
+
+}else{
+
+location.reload();
+
+}
 
 });
